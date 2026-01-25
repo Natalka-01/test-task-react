@@ -1,0 +1,14 @@
+.appWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1; /* Змушує контент займати весь вільний простір, штовхаючи футер вниз (якщо він буде) */
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto; /* Центрування по горизонталі */
+  padding: 0 64px; /* Бокові відступи з макета */
+  box-sizing: border-box;
+}

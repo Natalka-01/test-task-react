@@ -1,0 +1,28 @@
+:root {
+  --main-color: #e44848;      /* Red */
+  --hover-color: #d84343;     /* Darker Red */
+  --text-dark: #101828;       /* Black */
+  --text-gray: #475467;       /* Gray */
+  --bg-light: #f7f7f7;        /* Light Gray */
+  --white: #ffffff;
+  --yellow: #ffc531;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

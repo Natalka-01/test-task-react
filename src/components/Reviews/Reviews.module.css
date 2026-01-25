@@ -1,0 +1,83 @@
+/* Контейнер для списку відгуків */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px; /* Великий відступ між окремими відгуками */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Блок одного відгуку */
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Відступ між заголовком (аватар+ім'я) та текстом коментаря */
+}
+
+/* Заголовок відгуку (Аватар + Інфо) */
+.userHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Круглий аватар з першою літерою імені */
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--bg-light); /* Світло-сірий фон з вашого UI KIT */
+  color: var(--main-color);       /* Червона літера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Блок з іменем та зірочками */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Контейнер для зірочок */
+.stars {
+  display: flex;
+  gap: 4px; /* Відстань між зірочками */
+}
+
+.starIcon {
+  font-size: 16px;
+}
+
+/* Текст коментаря */
+.comment {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+/* Адаптивність: на мобільних можна зменшити відступи */
+@media (max-width: 768px) {
+  .list {
+    gap: 32px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
