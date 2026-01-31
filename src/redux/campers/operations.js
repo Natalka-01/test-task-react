@@ -16,7 +16,12 @@ export const fetchCampers = createAsyncThunk(
 
       const { data } = await axios.get(`/campers?${params.toString()}`);
       return data; 
-    } catch (error) {
+    } catch (error)
+      {
+      
+      if (error.response && error.response.status === 404) {
+        return { items: [], total: 0 };
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
