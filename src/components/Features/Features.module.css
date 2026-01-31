@@ -1,0 +1,77 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+/* Секція з іконками-чіпсами */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background-color: #f2f4f7; /* Світло-сірий фон чіпсів */
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+/* Іконки всередині чіпсів */
+.chip svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Заголовок секції деталей */
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+
+/* Список технічних характеристик (таблиця) */
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #101828;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #101828;
+  text-align: right;
+}

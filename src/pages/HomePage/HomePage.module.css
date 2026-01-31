@@ -1,0 +1,52 @@
+.hero {
+  /* Віднімаємо висоту хешдера, щоб банер був на весь екран без прокрутки */
+  height: calc(100vh - 80px); 
+  background-image: linear-gradient(
+      rgba(16, 24, 40, 0.4), /* Темний фільтр, щоб текст читався краще */
+      rgba(16, 24, 40, 0.4)
+    ),
+    url("../../images/Picture.png"); /* Відносний шлях до твого зображення */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.16;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: #e44848;
+  color: #ffffff;
+  padding: 16px 48px;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d84343;
+}
