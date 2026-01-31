@@ -1,11 +1,9 @@
 :root {
-  --main-color: #e44848;      /* Red */
-  --hover-color: #d84343;     /* Darker Red */
-  --text-dark: #101828;       /* Black */
-  --text-gray: #475467;       /* Gray */
-  --bg-light: #f7f7f7;        /* Light Gray */
-  --white: #ffffff;
-  --yellow: #ffc531;
+  --main-color: #E44848;   /* Червоний */
+  --text-dark: #101828;   /* Майже чорний */
+  --text-gray: #475467;   /* Сірий */
+  --bg-light: #F2F4F7;    /* Світлий фон */
+  --white: #FFFFFF;
 }
 
 body {
@@ -15,10 +13,9 @@ body {
   background-color: var(--white);
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s ease;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {

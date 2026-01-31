@@ -4,19 +4,27 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     location: "",
-    form: "",
+    form: "", // 'van', 'fullyIntegrated', 'alcove'
     features: {
       AC: false,
       bathroom: false,
       kitchen: false,
       TV: false,
       radio: false,
-    }
+      refrigerator: false,
+      microwave: false,
+      gas: false,
+      water: false,
+    },
   },
   reducers: {
-    setLocation: (state, action) => { state.location = action.payload; },
-    setForm: (state, action) => { state.form = action.payload; },
-    toggleFeature: (state, action) => {
+    setLocation(state, action) {
+      state.location = action.payload;
+    },
+    setForm(state, action) {
+      state.form = state.form === action.payload ? "" : action.payload;
+    },
+    toggleFeature(state, action) {
       const feature = action.payload;
       state.features[feature] = !state.features[feature];
     },

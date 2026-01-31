@@ -1,16 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"; // Крок 1: Імпорт
+import { createSlice } from "@reduxjs/toolkit"; // Це прибере ReferenceError
+import { fetchCampers } from "./operations";
 
 const campersSlice = createSlice({
   name: "campers",
-  initialState: {
-    items: [],
-    favorites: [],
-    loading: false,
-    error: null,
-    total: 0,
-  },
+  initialState: { items: [], favorites: [], loading: false, error: null, total: 0 },
   reducers: {
-    // Крок 2: Додай toggleFavorite, на який свариться CamperCard.jsx
+    // Це прибере помилку в CamperCard
     toggleFavorite: (state, action) => {
       const id = action.payload;
       if (state.favorites.includes(id)) {
@@ -19,17 +14,20 @@ const campersSlice = createSlice({
         state.favorites.push(id);
       }
     },
+    // Це допоможе уникнути дублікатів ключів
     resetItems: (state) => {
       state.items = [];
+      state.total = 0;
     }
   },
   extraReducers: (builder) => {
-    // Твої builder.addCase для fetchCampers...
+    builder
+      .addCase(fetchCampers.fulfilled, (state, action) => {
+        state.items = [...state.items, ...action.payload.items];
+        state.total = action.payload.total;
+      });
   }
 });
 
-// Крок 3: Експортуй екшени
 export const { toggleFavorite, resetItems } = campersSlice.actions;
-
-// Крок 4: Експортуй редюсер саме під цим ім'ям для store.js
-export const campersReducer = campersSlice.reducer;
+export const campersReducer = campersSlice.reducer; // Це прибере помилку в store.js

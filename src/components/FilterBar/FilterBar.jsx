@@ -1,53 +1,60 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setLocation, setForm, toggleFeature } from "../../redux/filters/slice";
-import { resetItems } from "../../redux/campers/slice";
-import { fetchCampers } from "../../redux/campers/operations";
+import { HiMapPin } from "react-icons/hi2";
 import css from "./FilterBar.module.css";
+import clsx from "clsx";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
   const filters = useSelector(state => state.filters);
 
-  const handleSearch = () => {
-    dispatch(resetItems());
-    dispatch(fetchCampers({ page: 1, filters }));
-  };
+  const equipment = [
+    { id: "AC", label: "AC" },
+    { id: "kitchen", label: "Kitchen" },
+    { id: "TV", label: "TV" },
+    { id: "bathroom", label: "Bathroom" }
+  ];
 
   return (
-    <aside className={css.sidebar}>
-      <label className={css.label}>Location</label>
-      <input 
-        type="text" 
-        className={css.input} 
-        placeholder="City, Ukraine"
-        value={filters.location}
-        onChange={(e) => dispatch(setLocation(e.target.value))}
-      />
+    <div className={css.wrapper}>
+      <div className={css.locationSection}>
+        <label className={css.label}>Location</label>
+        <div className={css.inputGroup}>
+          <HiMapPin className={css.iconMap} />
+          <input 
+            type="text" 
+            placeholder="City, Country"
+            value={filters.location}
+            onChange={(e) => dispatch(setLocation(e.target.value))}
+            className={css.input}
+          />
+        </div>
+      </div>
 
       <p className={css.filterTitle}>Filters</p>
       
-      <div className={css.group}>
-        <h3>Vehicle equipment</h3>
-        <div className={css.iconsGrid}>
-          {['AC', 'bathroom', 'kitchen', 'TV', 'radio'].map(item => (
-            <button 
-              key={item}
-              className={filters.features[item] ? css.activeIcon : css.iconBtn}
-              onClick={() => dispatch(toggleFeature(item))}
+      <div className={css.section}>
+        <h3 className={css.subTitle}>Vehicle equipment</h3>
+        <div className={css.grid}>
+          {equipment.map(item => (
+            <button
+              key={item.id}
+              className={clsx(css.filterBtn, filters.features[item.id] && css.active)}
+              onClick={() => dispatch(toggleFeature(item.id))}
             >
-              {item}
+              {item.label}
             </button>
           ))}
         </div>
       </div>
 
-      <div className={css.group}>
-        <h3>Vehicle type</h3>
-        <div className={css.iconsGrid}>
-          {['Van', 'Fully Integrated', 'Alcove'].map(type => (
-            <button 
+      <div className={css.section}>
+        <h3 className={css.subTitle}>Vehicle type</h3>
+        <div className={css.grid}>
+          {["van", "fullyIntegrated", "alcove"].map(type => (
+            <button
               key={type}
-              className={filters.form === type ? css.activeIcon : css.iconBtn}
+              className={clsx(css.filterBtn, filters.form === type && css.active)}
               onClick={() => dispatch(setForm(type))}
             >
               {type}
@@ -55,9 +62,7 @@ const FilterBar = () => {
           ))}
         </div>
       </div>
-
-      <button className={css.searchBtn} onClick={handleSearch}>Search</button>
-    </aside>
+    </div>
   );
 };
 

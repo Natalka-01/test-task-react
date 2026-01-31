@@ -5,15 +5,17 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={css.hero}>
-      <div className={css.content}>
-        <h1>Campers of your dreams</h1>
-        <p>You can find everything you want in our catalog</p>
-        <button onClick={() => navigate("/catalog")} className={css.btn}>
+    <section className={css.hero}>
+      <div className={css.container}>
+        <h1 className={css.title}>Campers of your dreams</h1>
+        <p className={css.subtitle}>
+          You can find everything you want in our catalog
+        </p>
+        <button className={css.btn} onClick={() => navigate("/catalog")}>
           View Now
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

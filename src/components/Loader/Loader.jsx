@@ -1,15 +1,20 @@
-import { ImSpinner2 } from "react-icons/im";
+import { RotatingLines } from "react-loader-spinner";
 import css from "./Loader.module.css";
 
 const Loader = () => {
   return (
-    <div className={css.backdrop}>
-      <div className={css.loader}>
-        <ImSpinner2 className={css.icon} />
-        <p className={css.text}>Loading campers...</p>
-      </div>
+    <div className={css.loaderWrapper}>
+      {/* Використовуємо червоний колір бренду #E44848 */}
+      <RotatingLines
+        strokeColor="#E44848"
+        strokeWidth="5"
+        animationDuration="0.75"
+        width="80"
+        visible={true}
+      />
     </div>
   );
 };
 
+// Цей рядок виправляє SyntaxError у App.jsx
 export default Loader;

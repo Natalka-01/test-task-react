@@ -1,28 +1,37 @@
-import { Formik, Form, Field } from "formik";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from "react-hot-toast";
 import css from "./BookingForm.module.css";
 
 const BookingForm = () => {
+  const [date, setDate] = useState(null);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    toast.success("Camper booked successfully!");
+    e.target.reset();
+    setDate(null);
+  };
+
   return (
-    <div className={css.container}>
-      <h3>Book your campervan now</h3>
-      <p>Stay connected! We are always ready to help you.</p>
-      <Formik
-        initialValues={{ name: "", email: "", date: "", comment: "" }}
-        onSubmit={(values, { resetForm }) => {
-          toast.success("Booking successful!");
-          resetForm();
-        }}
-      >
-        <Form className={css.form}>
-          <Field name="name" placeholder="Name*" required />
-          <Field name="email" type="email" placeholder="Email*" required />
-          <Field name="date" type="date" placeholder="Booking date*" required />
-          <Field name="comment" as="textarea" placeholder="Comment" />
-          <button type="submit">Send</button>
-        </Form>
-      </Formik>
-      <Toaster />
+    <div className={css.formWrapper}>
+      <Toaster position="top-right" />
+      <h3 className={css.title}>Book your campervan now</h3>
+      <p className={css.sub}>Stay connected! We are always ready to help you.</p>
+      <form className={css.form} onSubmit={handleSend}>
+        <input type="text" placeholder="Name*" required className={css.input} />
+        <input type="email" placeholder="Email*" required className={css.input} />
+        <DatePicker
+          selected={date}
+          onChange={(d) => setDate(d)}
+          placeholderText="Booking date*"
+          className={css.input}
+          required
+        />
+        <textarea placeholder="Comment" rows="4" className={css.textarea} />
+        <button type="submit" className={css.submitBtn}>Send</button>
+      </form>
     </div>
   );
 };

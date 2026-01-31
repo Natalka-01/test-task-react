@@ -1,83 +1,34 @@
-/* Головний контейнер сторінки */
 .container {
   display: flex;
-  gap: 64px; /* Відступ між фільтрами та контентом згідно з дизайном */
-  padding: 40px 0;
+  gap: 64px;
   max-width: 1440px;
   margin: 0 auto;
-  align-items: flex-start;
+  padding: 40px 64px;
 }
 
-/* Бокова панель (Sidebar) */
 .sidebar {
   width: 360px;
-  flex-shrink: 0; /* Щоб панель не стискалася, якщо карток багато */
-  position: sticky; /* Додає зручності: фільтри завжди перед очима при скролі */
-  top: 100px; 
+  flex-shrink: 0;
 }
 
-/* Основний контент (Список + Кнопка) */
 .content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центруємо кнопку Load More по горизонталі */
+  align-items: center;
 }
 
-/* Список карток */
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 32px; /* Відстань між картками кемперів */
-  width: 100%;
-}
-
-/* Кнопка Load more */
-.loadMoreBtn {
-  background-color: transparent;
-  color: var(--text-dark);
-  border: 1px solid rgba(71, 84, 103, 0.2); /* Світла рамка з UI KIT */
+.loadMore {
+  margin-top: 40px;
   padding: 16px 32px;
+  background: transparent;
+  border: 1px solid rgba(71, 84, 103, 0.2);
   border-radius: 200px;
-  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: border-color 0.3s;
 }
 
-.loadMoreBtn:hover {
-  border-color: var(--main-color); /* Зміна на червоний при наведенні */
-  color: var(--main-color);
-}
-
-/* Повідомлення про порожній результат */
-.empty {
-  font-size: 18px;
-  color: var(--text-gray);
-  text-align: center;
-  margin-top: 50px;
-}
-
-/* Помилка */
-.error {
-  color: var(--main-color);
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-/* Адаптивність для менших екранів (планшетів) */
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    padding: 20px;
-    gap: 32px;
-  }
-  
-  .sidebar {
-    width: 100%;
-    position: static;
-  }
+.loadMore:hover {
+  border-color: #E44848;
 }
