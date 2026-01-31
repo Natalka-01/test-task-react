@@ -4,7 +4,7 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     location: "",
-    form: "", // 'van', 'fullyIntegrated', 'alcove'
+    form: "", 
     features: {
       AC: false,
       bathroom: false,

@@ -1,8 +1,8 @@
 :root {
-  --main-color: #E44848;   /* Червоний */
-  --text-dark: #101828;   /* Майже чорний */
-  --text-gray: #475467;   /* Сірий */
-  --bg-light: #F2F4F7;    /* Світлий фон */
+  --main-color: #E44848;   
+  --text-dark: #101828;   
+  --text-gray: #475467;   
+  --bg-light: #F2F4F7;    
   --white: #FFFFFF;
 }
 

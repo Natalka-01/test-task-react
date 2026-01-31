@@ -40,11 +40,11 @@
 }
 
 .starYellow {
-  color: #FFC531; /* Золотий для рейтингу */
+  color: #FFC531; 
 }
 
 .starGray {
-  color: #F2F4F7; /* Світло-сірий для порожніх зірок */
+  color: #F2F4F7; 
 }
 
 .comment {

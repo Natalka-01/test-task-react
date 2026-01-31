@@ -27,13 +27,13 @@ const FilterBar = () => {
   ];
 
   const handleSearch = () => {
-    // Викликаємо запит до API з поточними фільтрами
+
     dispatch(fetchCampers({ page: 1, filters }));
   };
 
   return (
     <div className={css.wrapper}>
-      {/* Location Section */}
+
       <div className={css.locationSection}>
         <label className={css.label}>Location</label>
         <div className={css.inputWrapper}>
@@ -50,7 +50,7 @@ const FilterBar = () => {
 
       <p className={css.filterLabel}>Filters</p>
 
-      {/* Vehicle Equipment */}
+
       <div className={css.section}>
         <h3 className={css.sectionTitle}>Vehicle equipment</h3>
         <div className={css.divider}></div>
@@ -71,7 +71,7 @@ const FilterBar = () => {
         </div>
       </div>
 
-      {/* Vehicle Type */}
+
       <div className={css.section}>
         <h3 className={css.sectionTitle}>Vehicle type</h3>
         <div className={css.divider}></div>

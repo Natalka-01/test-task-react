@@ -4,7 +4,7 @@ import css from "./Loader.module.css";
 const Loader = () => {
   return (
     <div className={css.loaderWrapper}>
-      {/* Використовуємо червоний колір бренду #E44848 */}
+
       <RotatingLines
         strokeColor="#E44848"
         strokeWidth="5"
@@ -16,5 +16,5 @@ const Loader = () => {
   );
 };
 
-// Цей рядок виправляє SyntaxError у App.jsx
+
 export default Loader;

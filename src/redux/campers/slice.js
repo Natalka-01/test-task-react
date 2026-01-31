@@ -23,7 +23,7 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.pending, (state) => { state.loading = true; })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
-        // Важливо: додаємо лише унікальні елементи або замінюємо на 1-й сторінці
+
         if (action.meta.arg.page === 1) {
           state.items = action.payload.items;
         } else {

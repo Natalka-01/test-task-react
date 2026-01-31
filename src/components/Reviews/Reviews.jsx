@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa";
 import css from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
-  // Функція для створення масиву зірочок (жовтих та сірих)
+
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
@@ -21,7 +21,7 @@ const Reviews = ({ reviews }) => {
       {reviews.map((review, index) => (
         <li key={index} className={css.reviewItem}>
           <div className={css.header}>
-            {/* Перша літера імені як аватар */}
+ 
             <div className={css.avatar}>
               {review.reviewer_name.charAt(0).toUpperCase()}
             </div>
@@ -39,5 +39,5 @@ const Reviews = ({ reviews }) => {
   );
 };
 
-// ЦЕЙ РЯДОК ВИПРАВЛЯЄ ПОМИЛКУ SYNTAXERROR
+
 export default Reviews;

@@ -5,7 +5,7 @@
   width: 360px;
 }
 
-/* Локація */
+
 .locationGroup {
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
   outline: none;
 }
 
-/* Заголовки фільтрів */
+
 .filterLabel {
   font-weight: 500;
   font-size: 16px;
@@ -67,7 +67,7 @@
   margin-bottom: 24px;
 }
 
-/* Сітка кнопок */
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 112px; /* Фіксована ширина для 3-х в ряд */
+  width: 112px;
   height: 95px;
   background: transparent;
   border: 1px solid rgba(16, 24, 40, 0.1);
@@ -93,7 +93,7 @@
   border-color: #e44848;
 }
 
-/* Активний стан (червона рамка як на скрині) */
+
 .active {
   border-color: #e44848;
 }
@@ -111,7 +111,7 @@
   color: #101828;
 }
 
-/* Кнопка пошуку */
+
 .searchBtn {
   margin-top: 32px;
   padding: 16px 60px;

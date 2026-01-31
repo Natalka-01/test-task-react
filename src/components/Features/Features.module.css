@@ -4,7 +4,7 @@
   gap: 44px;
 }
 
-/* Секція з іконками-чіпсами */
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -27,13 +27,13 @@
   color: #101828;
 }
 
-/* Іконки всередині чіпсів */
+
 .chip svg {
   width: 20px;
   height: 20px;
 }
 
-/* Заголовок секції деталей */
+
 .title {
   font-weight: 600;
   font-size: 20px;
@@ -45,7 +45,7 @@
   margin-bottom: 24px;
 }
 
-/* Список технічних характеристик (таблиця) */
+
 .detailsList {
   display: flex;
   flex-direction: column;

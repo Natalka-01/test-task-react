@@ -7,7 +7,7 @@ import { filtersReducer } from "./filters/slice";
 const persistConfig = {
   key: "favorites",
   storage,
-  whitelist: ["favorites"], // Тільки обране зберігається в LocalStorage
+  whitelist: ["favorites"],
 };
 
 const persistedCampersReducer = persistReducer(persistConfig, campersReducer);

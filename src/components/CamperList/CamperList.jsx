@@ -2,7 +2,7 @@ import CamperCard from "../CamperCard/CamperCard";
 import css from "./CamperList.module.css";
 
 const CamperList = ({ campers }) => {
-  // Якщо масив порожній, нічого не рендеримо
+
   if (!campers || campers.length === 0) return null;
 
   return (

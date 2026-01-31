@@ -1,0 +1,115 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 64px;
+}
+
+/* Верхня частина: Назва, Рейтинг, Ціна */
+.header {
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  margin-top: 16px;
+}
+
+/* Галерея: 4 зображення в ряд */
+.gallery {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.galleryImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Опис */
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 44px;
+}
+
+/* Таби (Features / Reviews) */
+.tabs {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  margin-bottom: 44px;
+}
+
+.tabs button {
+  padding: 24px 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #101828;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Червона лінія під активним табом */
+.tabs button.active {
+  color: #101828;
+}
+
+.tabs button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Накладаємо на лінію бордера секції */
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #E44848;
+}
+
+/* Нижня секція: Контент зліва + Форма справа */
+.bottomSection {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.tabContent {
+  flex: 1; /* Займає весь вільний простір */
+}
+
+.bookingAside {
+  width: 448px; /* Фіксована ширина форми згідно з ТЗ */
+  flex-shrink: 0;
+  padding: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  position: sticky; /* Форма буде залишатися на екрані при скролі довгих відгуків */
+  top: 20px;
+}

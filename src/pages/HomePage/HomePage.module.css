@@ -1,11 +1,10 @@
 .hero {
-  /* Віднімаємо висоту хешдера, щоб банер був на весь екран без прокрутки */
   height: calc(100vh - 80px); 
   background-image: linear-gradient(
-      rgba(16, 24, 40, 0.4), /* Темний фільтр, щоб текст читався краще */
+      rgba(16, 24, 40, 0.4), 
       rgba(16, 24, 40, 0.4)
     ),
-    url("../../images/Picture.png"); /* Відносний шлях до твого зображення */
+    url("../../images/Picture.png"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

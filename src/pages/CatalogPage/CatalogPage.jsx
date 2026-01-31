@@ -13,7 +13,7 @@ const CatalogPage = () => {
   const filters = useSelector(state => state.filters);
   const [page, setPage] = useState(1);
 
-  // Скидаємо все при новому пошуку (фільтрах)
+
   useEffect(() => {
     dispatch(resetItems());
     setPage(1);
