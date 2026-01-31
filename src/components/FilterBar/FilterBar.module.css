@@ -1,0 +1,131 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 360px;
+}
+
+/* Локація */
+.locationGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 18px;
+  color: #101828;
+  width: 20px;
+  height: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 18px 18px 48px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #101828;
+  outline: none;
+}
+
+/* Заголовки фільтрів */
+.filterLabel {
+  font-weight: 500;
+  font-size: 16px;
+  color: #475467;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+
+/* Сітка кнопок */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.filterBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 112px; /* Фіксована ширина для 3-х в ряд */
+  height: 95px;
+  background: transparent;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filterBtn:hover {
+  border-color: #e44848;
+}
+
+/* Активний стан (червона рамка як на скрині) */
+.active {
+  border-color: #e44848;
+}
+
+.btnIcon {
+  width: 32px;
+  height: 32px;
+  color: #101828;
+}
+
+.btnText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+/* Кнопка пошуку */
+.searchBtn {
+  margin-top: 32px;
+  padding: 16px 60px;
+  background-color: #e44848;
+  color: #ffffff;
+  border: none;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.searchBtn:hover {
+  background-color: #d84343;
+}
