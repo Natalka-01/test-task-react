@@ -1,0 +1,58 @@
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviewItem {
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #F2F4F7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E44848;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.starYellow {
+  color: #FFC531; /* Золотий для рейтингу */
+}
+
+.starGray {
+  color: #F2F4F7; /* Світло-сірий для порожніх зірок */
+}
+
+.comment {
+  line-height: 1.5;
+  color: #475467;
+}
+
+.noReviews {
+  color: #475467;
+  font-style: italic;
+}

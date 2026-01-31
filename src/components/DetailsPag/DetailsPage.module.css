@@ -1,0 +1,11 @@
+.section { padding: 40px 0; }
+.container { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
+.price { font-size: 32px; font-weight: 600; margin: 16px 0; }
+.gallery { display: flex; gap: 16px; margin-bottom: 28px; list-style: none; overflow-x: auto; }
+.gallery img { width: 290px; height: 310px; object-fit: cover; border-radius: 10px; }
+.detailsWrapper { display: flex; gap: 64px; margin-top: 44px; }
+.content { flex: 1; }
+.sidebar { width: 448px; }
+.tabs { display: flex; gap: 40px; border-bottom: 1px solid rgba(16, 24, 40, 0.2); margin-top: 44px; }
+.tab, .activeTab { padding: 24px 0; border: none; background: none; font-weight: 600; cursor: pointer; }
+.activeTab { border-bottom: 4px solid #E44848; }

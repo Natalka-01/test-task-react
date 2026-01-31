@@ -1,0 +1,62 @@
+.header {
+  width: 100%;
+  background-color: #f7f7f7; /* Світло-сірий фон як у макеті */
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #101828;
+  text-decoration: none;
+}
+
+.logoAccent {
+  color: #e44848; /* Фірмовий червоний TravelTrucks */
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #e44848;
+}
+
+/* Стиль для посилання на активній сторінці */
+.active {
+  color: #e44848;
+  position: relative;
+}
+
+/* Опціонально: маленька риска під активним посиланням */
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e44848;
+}

@@ -1,31 +1,43 @@
+// Замість PiTv використовуємо PiTelevision
+import { PiWind, PiShower, PiBowlFood, PiTelevision, PiRadio } from "react-icons/pi";
 import { TbAutomaticGearbox, TbEngine } from "react-icons/tb";
-import { PiWind, PiShower, PiBowlFood, PiTv, PiRadio } from "react-icons/pi";
 import css from "./Features.module.css";
 
-const Features = ({ camper }) => (
-  <div className={css.container}>
-    <ul className={css.chips}>
-      <li className={css.chip}><TbAutomaticGearbox /> {camper.transmission}</li>
-      <li className={css.chip}><TbEngine /> {camper.engine}</li>
-      {camper.AC && <li className={css.chip}><PiWind /> AC</li>}
-      {camper.kitchen && <li className={css.chip}><PiBowlFood /> Kitchen</li>}
-      {camper.bathroom && <li className={css.chip}><PiShower /> Bathroom</li>}
-      {camper.TV && <li className={css.chip}><PiTv /> TV</li>}
-      {camper.radio && <li className={css.chip}><PiRadio /> Radio</li>}
-    </ul>
-    
-    <div className={css.details}>
-      <h3 className={css.title}>Vehicle details</h3>
-      <ul className={css.detailsList}>
-        <li><span>Form</span><span>{camper.form}</span></li>
-        <li><span>Length</span><span>{camper.length}</span></li>
-        <li><span>Width</span><span>{camper.width}</span></li>
-        <li><span>Height</span><span>{camper.height}</span></li>
-        <li><span>Tank</span><span>{camper.tank}</span></li>
-        <li><span>Consumption</span><span>{camper.consumption}</span></li>
+const Features = ({ camper }) => {
+  // Оновлюємо масив категорій, щоб використовувати правильну іконку телевізора
+  const categories = [
+    { key: "transmission", label: camper.transmission, icon: <TbAutomaticGearbox /> },
+    { key: "engine", label: camper.engine, icon: <TbEngine /> },
+    { key: "AC", label: "AC", icon: <PiWind /> },
+    { key: "bathroom", label: "Bathroom", icon: <PiShower /> },
+    { key: "kitchen", label: "Kitchen", icon: <PiBowlFood /> },
+    { key: "TV", label: "TV", icon: <PiTelevision /> }, // Виправлено тут
+    { key: "radio", label: "Radio", icon: <PiRadio /> },
+  ];
+
+  return (
+    <div className={css.container}>
+      <ul className={css.badges}>
+        {categories.map(item => camper[item.key] && (
+          <li key={item.key} className={css.badge}>
+            {item.icon} <span>{item.label}</span>
+          </li>
+        ))}
       </ul>
+      
+      <div className={css.details}>
+        <h3 className={css.title}>Vehicle details</h3>
+        <ul className={css.detailsList}>
+          <li className={css.detailItem}><span>Form</span><span>{camper.form}</span></li>
+          <li className={css.detailItem}><span>Length</span><span>{camper.length}</span></li>
+          <li className={css.detailItem}><span>Width</span><span>{camper.width}</span></li>
+          <li className={css.detailItem}><span>Height</span><span>{camper.height}</span></li>
+          <li className={css.detailItem}><span>Tank</span><span>{camper.tank}</span></li>
+          <li className={css.detailItem}><span>Consumption</span><span>{camper.consumption}</span></li>
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Features;
